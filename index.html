@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hunt Tournament Casino IV – Reglement 2026</title>
+  <meta name="description" content="Offizielles Turnier-Reglement für das Hunt: Showdown Tournament Casino IV 2026 – Ritter der Fokusnuss">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d0a07;
+      --bg-card: #1a1510;
+      --bg-card-hover: #231d14;
+      --gold: #c9a84c;
+      --gold-light: #e4cc7a;
+      --gold-dim: #8a7234;
+      --gold-dark: #5c4d24;
+      --red: #8b1a1a;
+      --red-bright: #c62828;
+      --text: #d4cbbf;
+      --text-dim: #8a8078;
+      --text-bright: #f0e8df;
+      --border: rgba(201, 168, 76, 0.15);
+      --border-bright: rgba(201, 168, 76, 0.35);
+      --glow: rgba(201, 168, 76, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 18px;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-dark); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(139, 26, 26, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 80%, rgba(13, 10, 7, 0.95) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-dark) 0%, rgba(30, 15, 5, 0.9) 30%, rgba(60, 20, 10, 0.5) 50%, rgba(30, 15, 5, 0.9) 70%, var(--bg-dark) 100%);
+      z-index: 1;
+    }
+
+    /* Forest silhouette */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 300px;
+      background: linear-gradient(0deg, var(--bg-dark) 10%, transparent 100%);
+      z-index: 2;
+    }
+
+    .forest-silhouette {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 350px;
+      z-index: 1;
+      opacity: 0.3;
+    }
+
+    .forest-silhouette svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 2rem;
+    }
+
+    .hero-org {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .hero-org::before,
+    .hero-org::after {
+      content: '';
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .hero-title {
+      font-family: 'Cinzel Decorative', 'Cinzel', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      background: linear-gradient(180deg, #f0d678 0%, #c9a84c 40%, #a07830 80%, #7a5c20 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 4px 20px rgba(201, 168, 76, 0.3));
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+
+    .hero-suits {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 1.5rem 0;
+      font-size: 1.5rem;
+    }
+
+    .hero-suits .suit {
+      color: var(--gold-dim);
+      opacity: 0.7;
+    }
+
+    .hero-suits .casino-text {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      background: linear-gradient(180deg, #f0d678 0%, #c9a84c 50%, #8a6820 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-edition {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.5em;
+      color: var(--gold-dark);
+      margin-top: 0.5rem;
+    }
+
+    .hero-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 1.8rem;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold-dim);
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      animation: pulse 2s ease-in-out infinite;
+      text-decoration: none;
+    }
+
+    .hero-scroll .arrow {
+      font-size: 1.2rem;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* Floating particles */
+    .particles {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0;
+      animation: float-up linear infinite;
+    }
+
+    @keyframes float-up {
+      0% { opacity: 0; transform: translateY(0) scale(0.5); }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.3; }
+      100% { opacity: 0; transform: translateY(-400px) scale(0); }
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 10, 7, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+    }
+
+    .nav-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 0;
+    }
+
+    .nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      padding: 1rem 1.2rem;
+      transition: color 0.3s, background 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav a:hover {
+      color: var(--gold);
+      background: var(--glow);
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      margin-bottom: 5rem;
+      scroll-margin-top: 80px;
+    }
+
+    .section-number {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-number::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-bright), transparent);
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .section-body p {
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    /* ===== RULE CARDS ===== */
+    .rule-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 21, 16, 0.8) 100%);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .rule-card:hover {
+      border-color: var(--border-bright);
+      box-shadow: 0 0 30px var(--glow);
+    }
+
+    .rule-card h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .rule-card p, .rule-card li {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .rule-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .rule-card ul li {
+      padding: 0.3rem 0 0.3rem 1.5rem;
+      position: relative;
+    }
+
+    .rule-card ul li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+      font-size: 0.6rem;
+      top: 0.65rem;
+    }
+
+    /* ===== POINTS TABLE ===== */
+    .points-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .points-table thead th {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: left;
+      padding: 1rem 1.2rem;
+      border-bottom: 2px solid var(--gold-dark);
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    .points-table tbody td {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.05rem;
+    }
+
+    .points-table tbody tr {
+      transition: background 0.3s;
+    }
+
+    .points-table tbody tr:hover {
+      background: var(--glow);
+    }
+
+    .points-table .points-value {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .points-table .action-icon {
+      font-size: 1.2rem;
+      margin-right: 0.6rem;
+      display: inline-block;
+      width: 1.5rem;
+      text-align: center;
+    }
+
+    /* ===== CASINO CARDS ===== */
+    .casino-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .casino-card {
+      background: linear-gradient(145deg, var(--bg-card) 0%, rgba(30, 22, 12, 0.9) 100%);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .casino-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-bright);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--glow);
+    }
+
+    .casino-card-header {
+      padding: 1.2rem 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(201, 168, 76, 0.03);
+    }
+
+    .casino-card-header h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin: 0;
+    }
+
+    .casino-card-header .card-icon {
+      font-size: 1.5rem;
+      color: var(--gold-dim);
+    }
+
+    .casino-card-body {
+      padding: 1.5rem 1.8rem;
+    }
+
+    .casino-card-body p {
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .casino-option {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(201, 168, 76, 0.08);
+      border-radius: 4px;
+      padding: 1rem 1.3rem;
+      margin-top: 0.8rem;
+    }
+
+    .casino-option .option-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .casino-option p {
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      margin: 0;
+    }
+
+    .reward-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.05));
+      border: 1px solid var(--gold-dark);
+      border-radius: 3px;
+      padding: 0.2rem 0.7rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      margin-top: 0.4rem;
+    }
+
+    .warning-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(139, 26, 26, 0.2), rgba(139, 26, 26, 0.05));
+      border: 1px solid rgba(139, 26, 26, 0.4);
+      border-radius: 3px;
+      padding: 0.2rem 0.7rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #d4736e;
+      margin-top: 0.4rem;
+    }
+
+    /* ===== FORMULA ===== */
+    .formula-box {
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.06) 0%, rgba(13, 10, 7, 0.8) 100%);
+      border: 1px solid var(--border-bright);
+      border-radius: 6px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .formula-box .formula {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.9rem, 2vw, 1.15rem);
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+
+    .formula-box .formula-note {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-top: 0.8rem;
+    }
+
+    /* ===== SPECIAL ROUND ===== */
+    .special-round {
+      position: relative;
+      background: linear-gradient(135deg, rgba(139, 26, 26, 0.1) 0%, var(--bg-card) 50%, rgba(201, 168, 76, 0.05) 100%);
+      border: 1px solid var(--red);
+      border-radius: 6px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+    }
+
+    .special-round::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
+    }
+
+    .special-round h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+
+    .special-round ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .special-round ul li {
+      padding: 0.4rem 0 0.4rem 1.8rem;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    .special-round ul li::before {
+      content: '⬥';
+      position: absolute;
+      left: 0;
+      color: var(--red-bright);
+      font-size: 0.7rem;
+      top: 0.6rem;
+    }
+
+    /* ===== CLOSING ===== */
+    .closing {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .closing-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--gold-dim);
+      margin-bottom: 1rem;
+    }
+
+    .closing p {
+      font-size: 1rem;
+      color: var(--text-dim);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    .footer a {
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--gold);
+    }
+
+    /* ===== SEPARATOR ===== */
+    .sep {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 3rem 0;
+      color: var(--gold-dim);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+    }
+
+    .sep::before,
+    .sep::after {
+      content: '';
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .content {
+        padding: 1.5rem 1.2rem 4rem;
+      }
+
+      .rule-card {
+        padding: 1.3rem 1.2rem;
+      }
+
+      .casino-card-header, .casino-card-body {
+        padding: 1rem 1.2rem;
+      }
+
+      .nav a {
+        padding: 0.8rem 0.8rem;
+        font-size: 0.6rem;
+      }
+
+      .points-table thead th,
+      .points-table tbody td {
+        padding: 0.7rem 0.8rem;
+      }
+
+      .formula-box {
+        padding: 1.3rem;
+      }
+
+      .special-round {
+        padding: 1.5rem;
+      }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="top">
+    <div class="particles" id="particles"></div>
+
+    <div class="forest-silhouette">
+      <svg viewBox="0 0 1440 350" preserveAspectRatio="none" fill="#1a1510">
+        <path d="M0,350 L0,280 L20,280 L25,220 L30,280 L40,260 L45,180 L50,260 L55,250 L60,190 L65,250 L80,270 L85,200 L90,150 L95,200 L100,260 L110,250 L115,160 L120,100 L125,160 L130,240 L140,260 L150,240 L155,170 L160,120 L165,170 L170,230 L180,250 L190,240 L195,180 L200,130 L205,90 L210,130 L215,180 L220,240 L230,260 L240,250 L245,190 L250,140 L255,100 L258,70 L261,100 L265,140 L270,200 L280,250 L290,240 L300,260 L310,250 L315,180 L320,130 L325,80 L328,50 L331,80 L335,130 L340,190 L345,240 L355,260 L365,250 L370,200 L375,150 L380,110 L385,150 L390,200 L400,250 L410,270 L420,260 L425,190 L430,140 L435,90 L438,60 L441,90 L445,140 L450,200 L455,250 L465,260 L480,270 L485,220 L490,170 L495,120 L500,80 L503,50 L506,80 L510,120 L515,180 L520,230 L530,260 L540,250 L545,190 L550,140 L555,100 L560,140 L565,200 L575,250 L585,270 L595,260 L600,210 L605,160 L610,120 L615,80 L618,55 L621,80 L625,120 L630,170 L635,220 L645,260 L660,270 L665,230 L670,180 L675,130 L680,90 L685,130 L690,180 L700,240 L710,260 L720,250 L730,260 L740,250 L745,190 L750,140 L755,95 L758,65 L761,95 L765,140 L770,200 L780,250 L790,270 L800,260 L805,200 L810,150 L815,110 L820,150 L825,200 L835,250 L845,260 L860,270 L865,220 L870,170 L875,120 L878,80 L881,50 L884,80 L888,120 L893,180 L900,240 L910,260 L920,250 L925,190 L930,140 L935,100 L940,140 L945,190 L950,240 L960,260 L975,270 L980,220 L985,170 L990,130 L995,90 L998,60 L1001,90 L1005,130 L1010,180 L1020,240 L1030,260 L1040,250 L1045,200 L1050,150 L1055,110 L1060,70 L1063,45 L1066,70 L1070,110 L1075,160 L1080,210 L1090,250 L1100,270 L1110,260 L1115,200 L1120,150 L1125,100 L1130,150 L1135,200 L1145,250 L1160,260 L1170,250 L1175,190 L1180,140 L1185,100 L1188,70 L1191,100 L1195,140 L1200,200 L1210,250 L1220,270 L1230,260 L1235,210 L1240,160 L1245,120 L1250,80 L1253,55 L1256,80 L1260,120 L1265,170 L1275,230 L1285,260 L1300,270 L1305,230 L1310,180 L1315,130 L1320,90 L1325,130 L1330,180 L1340,240 L1350,260 L1360,250 L1370,260 L1375,210 L1380,160 L1385,120 L1390,160 L1395,210 L1400,250 L1410,270 L1420,260 L1430,270 L1440,260 L1440,350 Z" />
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-org">Ritter der Fokusnuss</div>
+      <h1 class="hero-title">HUNT</h1>
+      <div class="hero-subtitle">Tournament</div>
+      <div class="hero-suits">
+        <span class="suit">&#9824;</span>
+        <span class="suit">&#9829;</span>
+        <span class="casino-text">Casino</span>
+        <span class="suit">&#9830;</span>
+        <span class="suit">&#9827;</span>
+      </div>
+      <div class="hero-edition">IV</div>
+      <div class="hero-date">25. April 2026 &nbsp;·&nbsp; 18:00 Uhr</div>
+    </div>
+
+    <a href="#reglement" class="hero-scroll">
+      <span>Reglement</span>
+      <span class="arrow">&#9660;</span>
+    </a>
+  </header>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#ablauf">Ablauf</a>
+      <a href="#punkte">Punkte</a>
+      <a href="#casino">Casino</a>
+      <a href="#kosten">Kosten</a>
+      <a href="#sonderrunde">Sonderrunde</a>
+      <a href="#schluss">Schluss</a>
+    </div>
+  </nav>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="content" id="reglement">
+
+    <!-- 1. Turnierablauf -->
+    <section class="section fade-in" id="ablauf">
+      <div class="section-number">Abschnitt I</div>
+      <h2 class="section-title">Der Turnierablauf</h2>
+      <div class="section-body">
+        <p>Das Turnier erstreckt sich über insgesamt <strong>8 Runden</strong>.</p>
+
+        <div class="rule-card">
+          <h4>Simultanstart</h4>
+          <p>Alle Teams beginnen jede Runde zur gleichen Zeit.</p>
+        </div>
+
+        <div class="rule-card">
+          <h4>Synchronisation</h4>
+          <p>Eine neue Runde startet erst, wenn alle Jäger den Bayou verlassen haben – oder darin geblieben sind.</p>
+        </div>
+
+        <div class="rule-card">
+          <h4>Transparenz</h4>
+          <p>Nach jeder Runde erfolgt ein Update der Punkte und der Tabellenplatzierung.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep">&#9830;</div>
+
+    <!-- 2. Punktesystem -->
+    <section class="section fade-in" id="punkte">
+      <div class="section-number">Abschnitt II</div>
+      <h2 class="section-title">Das Punktesystem</h2>
+      <div class="section-body">
+        <p>Punkte werden für handfeste Erfolge im Feld vergeben:</p>
+
+        <div class="rule-card" style="padding: 0; overflow: hidden;">
+          <table class="points-table">
+            <thead>
+              <tr>
+                <th>Aktion</th>
+                <th style="text-align: center;">Punkte</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="action-icon">&#128293;</span>Hauptboss verbannt</td>
+                <td class="points-value">1</td>
+              </tr>
+              <tr>
+                <td><span class="action-icon">&#128165;</span>Nebenboss verbannt</td>
+                <td class="points-value">1</td>
+              </tr>
+              <tr>
+                <td><span class="action-icon">&#128176;</span>Bounty-Teil extrahiert</td>
+                <td class="points-value">2 <small style="color: var(--text-dim); font-family: 'Cormorant Garamond', serif; font-size: 0.8rem;">(pro Teil)</small></td>
+              </tr>
+              <tr>
+                <td><span class="action-icon">&#9876;&#65039;</span>Gegnerischer Jäger eliminiert</td>
+                <td class="points-value">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep">&#9827;</div>
+
+    <!-- 3. Casino -->
+    <section class="section fade-in" id="casino">
+      <div class="section-number">Abschnitt III</div>
+      <h2 class="section-title">Das „Hunt Casino"</h2>
+      <div class="section-body">
+        <p>Ab der <strong>zweiten Runde</strong> öffnet das Casino seine Pforten. Der Besuch ist optional und muss <strong>vor dem Start</strong> der Runde erfolgen.</p>
+
+        <h3 style="font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-dim); margin: 2rem 0 1rem;">Die Spieleinsätze</h3>
+        <p>Ein Team kann sich pro Runde für <strong>eine</strong> der folgenden Optionen entscheiden:</p>
+
+        <div class="casino-grid">
+
+          <!-- Roulette -->
+          <div class="casino-card">
+            <div class="casino-card-header">
+              <h4>&#127922; Roulette-Tisch</h4>
+              <span class="card-icon">&#9824;</span>
+            </div>
+            <div class="casino-card-body">
+              <div class="casino-option">
+                <div class="option-name">Risiko</div>
+                <p>Das Team erhält ein zufälliges Loadout.</p>
+              </div>
+              <div style="margin-top: 1rem;">
+                <span class="reward-tag">Belohnung: 3 Punkte pro Kill</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coin Toss -->
+          <div class="casino-card">
+            <div class="casino-card-header">
+              <h4>&#129689; Coin Toss</h4>
+              <span class="card-icon">&#9829;</span>
+            </div>
+            <div class="casino-card-body">
+              <div class="casino-option">
+                <div class="option-name">Kopf – „Der nackte Mann"</div>
+                <p>Start ohne Bewaffnung.</p>
+                <span class="reward-tag">Belohnung: 4 Punkte pro Kill</span>
+              </div>
+              <div class="casino-option" style="margin-top: 0.8rem;">
+                <div class="option-name">Zahl – „Der talentlose Mann"</div>
+                <p>Start ohne Traits (Eigenschaften).</p>
+                <span class="reward-tag">Belohnung: 2 Punkte pro Kill</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Black-Jack -->
+          <div class="casino-card">
+            <div class="casino-card-header">
+              <h4>&#127183; Black-Jack</h4>
+              <span class="card-icon">&#9830;</span>
+            </div>
+            <div class="casino-card-body">
+              <p style="margin-bottom: 0.6rem;"><span class="warning-tag">Nur 1× pro Turnier nutzbar</span></p>
+              <p>Bestimme ein gegnerisches Team, das einen Nachteil erhält:</p>
+              <div class="casino-option">
+                <div class="option-name">Option A – „Waffe vergessen"</div>
+                <p>Gegner darf nur Pistolen führen (ein Waffenslot bleibt leer).</p>
+              </div>
+              <div class="casino-option" style="margin-top: 0.8rem;">
+                <div class="option-name">Option B – „Tools vergessen"</div>
+                <p>Gegner muss ohne Werkzeuge (Messer, Medkit, etc.) starten.</p>
+              </div>
+              <div class="rule-card" style="margin-top: 1rem; background: rgba(201, 168, 76, 0.03);">
+                <p style="font-size: 0.95rem; color: var(--text-dim); margin: 0;"><strong style="color: var(--gold-dim);">Hinweis:</strong> Besucht das Zielteam in dieser Runde freiwillig das Casino, verfällt der Effekt. Der Black-Jack-Einsatz darf dann später erneut genutzt werden.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="sep">&#9829;</div>
+
+    <!-- 4. Kosten -->
+    <section class="section fade-in" id="kosten">
+      <div class="section-number">Abschnitt IV</div>
+      <h2 class="section-title">Die Kosten des Glücks</h2>
+      <div class="section-body">
+        <p>Der Casinobesuch wird mit bereits erspielten Punkten bezahlt.</p>
+
+        <div class="rule-card">
+          <h4>&#127942; Comeback-Mechanik</h4>
+          <p>Um das Feld dicht beisammen zu halten <em>(Anti-Snowballing)</em>, gilt:</p>
+          <p>Das <strong>letztplatzierte Team</strong> (auch bei Punktgleichstand) besucht das Casino <strong>kostenlos</strong>.</p>
+        </div>
+
+        <h3 style="font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-dim); margin: 2rem 0 1rem;">Kostenberechnung</h3>
+        <p>Für alle anderen Teams berechnet sich die Gebühr wie folgt:</p>
+
+        <div class="formula-box">
+          <div class="formula">
+            Kosten = ⌈ ( Eigene Punkte − Punkte des Letztplatzierten ) ÷ 5 ⌉
+          </div>
+          <div class="formula-note">Das Ergebnis wird immer auf die nächste ganze Zahl aufgerundet.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep">&#9824;</div>
+
+    <!-- 5. Sonderrunde -->
+    <section class="section fade-in" id="sonderrunde">
+      <div class="section-number">Abschnitt V</div>
+      <h2 class="section-title">Sonderrunde: Das Publikum entscheidet</h2>
+      <div class="section-body">
+        <p>Die <strong>5. Runde</strong> gehört den Zuschauern!</p>
+
+        <div class="special-round">
+          <h4>&#127916; Runde 5 – Publikumswahl</h4>
+          <ul>
+            <li><strong>Casino geschlossen:</strong> In dieser Runde gibt es keine Wetten.</li>
+            <li><strong>Vorgabe:</strong> Das Publikum bestimmt das Loadout für alle Teams.</li>
+            <li><strong>Bonus:</strong> Jeder eliminierte Jäger zählt in dieser Runde <strong>2 Punkte</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep">&#9827;</div>
+
+    <!-- 6. Schluss -->
+    <section class="section fade-in" id="schluss">
+      <div class="section-number">Abschnitt VI</div>
+      <h2 class="section-title">Schlussbestimmungen</h2>
+      <div class="section-body">
+        <div class="rule-card">
+          <h4>Turnierleitung</h4>
+          <p>Bei Unklarheiten oder Streitfällen hat die Turnierleitung das letzte Wort.</p>
+        </div>
+
+        <div class="closing">
+          <div class="closing-quote">„Im Vordergrund stehen der Spaß, der Nervenkitzel und das taktische Risiko."</div>
+          <p>Geist des Spiels – Hunt Tournament Casino IV</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Hunt Tournament Casino IV &middot; 2026</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://www.huntshowdown.com/" target="_blank" rel="noopener">Hunt: Showdown 1896</a>
+      &middot; Ritter der Fokusnuss
+    </p>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Particles
+    (function() {
+      const container = document.getElementById('particles');
+      if (!container) return;
+      for (let i = 0; i < 25; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.bottom = Math.random() * 30 + '%';
+        p.style.animationDuration = (4 + Math.random() * 6) + 's';
+        p.style.animationDelay = (Math.random() * 8) + 's';
+        p.style.width = p.style.height = (2 + Math.random() * 2) + 'px';
+        container.appendChild(p);
+      }
+    })();
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
